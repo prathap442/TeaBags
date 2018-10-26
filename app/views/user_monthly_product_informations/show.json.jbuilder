@@ -1,0 +1,1 @@
+json.partial! "user_monthly_product_informations/user_monthly_product_information", user_monthly_product_information: @user_monthly_product_information

@@ -1,0 +1,2 @@
+class UserMonthlyProductInformation < ApplicationRecord
+end

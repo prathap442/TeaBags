@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subscription_duration: 1
+  max_variants: 1
+  minimum_value: 1.5
+
+two:
+  subscription_duration: 1
+  max_variants: 1
+  minimum_value: 1.5

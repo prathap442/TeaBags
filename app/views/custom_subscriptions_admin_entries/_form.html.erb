@@ -1,0 +1,32 @@
+<%= form_with(model: custom_subscriptions_admin_entry, local: true) do |form| %>
+  <% if custom_subscriptions_admin_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(custom_subscriptions_admin_entry.errors.count, "error") %> prohibited this custom_subscriptions_admin_entry from being saved:</h2>
+
+      <ul>
+      <% custom_subscriptions_admin_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :subscription_duration %>
+    <%= form.number_field :subscription_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_variants %>
+    <%= form.number_field :max_variants %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minimum_value %>
+    <%= form.text_field :minimum_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

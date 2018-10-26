@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Custom Subscriptions Admin Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subscription duration</th>
+      <th>Max variants</th>
+      <th>Minimum value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custom_subscriptions_admin_entries.each do |custom_subscriptions_admin_entry| %>
+      <tr>
+        <td><%= custom_subscriptions_admin_entry.subscription_duration %></td>
+        <td><%= custom_subscriptions_admin_entry.max_variants %></td>
+        <td><%= custom_subscriptions_admin_entry.minimum_value %></td>
+        <td><%= link_to 'Show', custom_subscriptions_admin_entry %></td>
+        <td><%= link_to 'Edit', edit_custom_subscriptions_admin_entry_path(custom_subscriptions_admin_entry) %></td>
+        <td><%= link_to 'Destroy', custom_subscriptions_admin_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custom Subscriptions Admin Entry', new_custom_subscriptions_admin_entry_path %>

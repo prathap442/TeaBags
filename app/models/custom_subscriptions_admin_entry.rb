@@ -1,0 +1,2 @@
+class CustomSubscriptionsAdminEntry < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Monthly Product Informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Information</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_monthly_product_informations.each do |user_monthly_product_information| %>
+      <tr>
+        <td><%= user_monthly_product_information.information %></td>
+        <td><%= link_to 'Show', user_monthly_product_information %></td>
+        <td><%= link_to 'Edit', edit_user_monthly_product_information_path(user_monthly_product_information) %></td>
+        <td><%= link_to 'Destroy', user_monthly_product_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Monthly Product Information', new_user_monthly_product_information_path %>

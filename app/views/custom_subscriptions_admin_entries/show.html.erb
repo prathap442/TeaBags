@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subscription duration:</strong>
+  <%= @custom_subscriptions_admin_entry.subscription_duration %>
+</p>
+
+<p>
+  <strong>Max variants:</strong>
+  <%= @custom_subscriptions_admin_entry.max_variants %>
+</p>
+
+<p>
+  <strong>Minimum value:</strong>
+  <%= @custom_subscriptions_admin_entry.minimum_value %>
+</p>
+
+<%= link_to 'Edit', edit_custom_subscriptions_admin_entry_path(@custom_subscriptions_admin_entry) %> |
+<%= link_to 'Back', custom_subscriptions_admin_entries_path %>

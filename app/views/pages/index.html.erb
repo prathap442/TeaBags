@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+
+<table border="2">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Ancestry</th>
+      <th>PageAncestyName</th>
+      <th>Master Node</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.name %></td>
+        <td><%= page.content %></td>
+        <td><%= page.ancestry %></td>
+        <td><p>
+            <%if(page.ancestry != 0 && page.ancestry != nil && page.ancestry != "0" && page.ancestry != "")%>
+              <%=Page.find(page.ancestry.to_i)? Page.find(page.ancestry.to_i).name : "this is the root"%>
+            <%else%>
+               No Ancestry to me
+            <%end%>
+            </p> 
+        </td>
+        <td><%=page.master_node%></td>
+        <td><%= link_to 'Show', page %></td>
+        <td><%= link_to 'Edit', edit_page_path(page) %></td>
+        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page', new_page_path %>
+<%= link_to "Add a custom Subscription",new_custom_subscriptions_admin_entry_path%>
+<%= link_to "3Months Subscription",user_monthly_product_informations_visualise_path({duration: 3,subType:"myos",session_identity: session[:user_id]}),method: :post%>
